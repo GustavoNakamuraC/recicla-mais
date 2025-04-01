@@ -1,0 +1,17 @@
+*{
+    background-color: #C9CBDC;
+}
+
+.tela{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.container{
+    margin: 45px;
+    background-color: #040F53;
+    width: 40%;
+    height: 550px;
+    border-radius: 10px;
+}
