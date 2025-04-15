@@ -1,0 +1,33 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .input-label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .input-field {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #adb3c4;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .input-field::placeholder {
+    color: #444;
+  }
+  
+  .input-error {
+    color: #ff8080;
+    font-size: 12px;
+    margin-top: 5px;
+  }  
