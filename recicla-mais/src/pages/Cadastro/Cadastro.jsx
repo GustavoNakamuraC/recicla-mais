@@ -2,28 +2,25 @@ import './Cadastro.css';
 import Input from '../../components/Input/Input';
 import Botao from '../../components/Botao/Botao';
 import { useForm } from 'react-hook-form';
-
-interface FormValues {
-  nome: string;
-  email: string;
-  senha: string;
-}
+import Logo from '../../assets/Logo.png';
 
 const Cadastro = () => {
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<FormValues>();
+  } = useForm();
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = (data) => {
     console.log(data);
   };
+
+  
 
   return (
     <div className="tela">
       <div className="container">
-        <img src="/logo.png" alt="Logo Recicla+" className="logo" />
+        <img src={Logo} alt="Logo Recicla+" className="logo" />
         <h1 className="titulo">Recicla<span className="plus">+</span></h1>
         <p className="subtitulo">Cadastre-se</p>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
