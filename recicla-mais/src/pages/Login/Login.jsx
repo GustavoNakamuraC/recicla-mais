@@ -3,17 +3,26 @@ import Input from "../../components/Input/Input";
 import Botao from "../../components/Botao/Botao";
 import Logo from "../../assets/Logo.png";
 import { useForm } from "react-hook-form";
+import logar from './LoginService'
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login() {
+  const [email, setEmail] = useState();
+  const [senha, setSenha] = useState();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    await logar({email, senha});
+    navigate('/');
     console.log("Tentando login com:", data);
-    // Faz seu trabalho ai Galão da massa
   };
 
   return (
@@ -26,6 +35,7 @@ export default function Login() {
           <Input
             label="Email"
             type="email"
+            value={email}
             {...register("email", { required: "Email é obrigatório" })}
             error={errors.email?.message}
           />
@@ -34,6 +44,7 @@ export default function Login() {
             type="password"
             {...register("senha", { required: "Senha é obrigatória" })}
             error={errors.senha?.message}
+            value={senha}
           />
           <Botao texto="Entrar" />
         </form>

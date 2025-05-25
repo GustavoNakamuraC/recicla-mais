@@ -1,15 +1,20 @@
-import Cadastro from './pages/Login/Login';
+import Cadastro from './pages/Cadastro/Cadastro';
+import Login from './pages/Login/Login'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
-// Alguem tem que ver essas rotas ai ein
-// Alguem né
 function App() {
 
   return (
-    <Cadastro />
+    <Router>
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro />}/>
+        <Route path="/login" element={<Login />}/>
+      </Routes>
+    </Router>
+
   )
-  
+
 }
 
 export default App

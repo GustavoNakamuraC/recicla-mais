@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default function cadastrar({ nome, email, senha }) {
+export default async function cadastrar({ nome, email, senha }) {
     axios.post('http://localhost:8080/usuarios', {
         nome: nome,
         email: email,

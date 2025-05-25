@@ -6,12 +6,14 @@ import { useForm } from 'react-hook-form';
 import Logo from '../../assets/Logo.png';
 import cadastrar from './CadastroService'
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function Cadastro(){
-  
+export default function Cadastro() {
+
   const [nome, setNome] = useState();
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -19,9 +21,11 @@ export default function Cadastro(){
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    cadastrar(data);
+  const onSubmit = async (data) => {
+    await cadastrar(data);  
+    navigate('/');
     console.log(data);
+    
   };
 
   return (
