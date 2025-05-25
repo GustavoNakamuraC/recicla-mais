@@ -1,10 +1,18 @@
-import "./Cadastro.css";
-import Input from "../../components/Input/Input";
-import Botao from "../../components/Botao/Botao";
-import { useForm } from "react-hook-form";
-import Logo from "../../assets/Logo.png";
 
-export default function Cadastro() {
+import './Cadastro.css';
+import Input from '../../components/Input/Input';
+import Botao from '../../components/Botao/Botao';
+import { useForm } from 'react-hook-form';
+import Logo from '../../assets/Logo.png';
+import cadastrar from './CadastroService'
+import { useState } from 'react';
+
+export default function Cadastro(){
+  
+  const [nome, setNome] = useState();
+  const [email, setEmail] = useState();
+  const [senha, setSenha] = useState();
+
   const {
     register,
     handleSubmit,
@@ -12,6 +20,7 @@ export default function Cadastro() {
   } = useForm();
 
   const onSubmit = (data) => {
+    cadastrar(data);
     console.log(data);
   };
 
@@ -28,14 +37,16 @@ export default function Cadastro() {
             label="Nome"
             type="text"
             error={errors.nome?.message}
-            {...register("nome", { required: "Nome é obrigatório" })}
+            value={nome}
+            {...register('nome', { required: 'Nome é obrigatório' })}
           />
           <Input
             label="Email"
             type="email"
             error={errors.email?.message}
-            {...register("email", {
-              required: "E-mail é obrigatório",
+            value={email}
+            {...register('email', {
+              required: 'E-mail é obrigatório',
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "E-mail inválido",
@@ -46,8 +57,9 @@ export default function Cadastro() {
             label="Senha"
             type="password"
             error={errors.senha?.message}
-            {...register("senha", {
-              required: "Senha é obrigatória",
+            value={senha}
+            {...register('senha', {
+              required: 'Senha é obrigatória',
               minLength: {
                 value: 6,
                 message: "A senha deve ter pelo menos 6 caracteres",
@@ -59,4 +71,4 @@ export default function Cadastro() {
       </div>
     </div>
   );
-}
+};

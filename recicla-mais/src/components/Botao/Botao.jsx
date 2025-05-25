@@ -7,3 +7,4 @@ export default function Botao({ texto, onClick }) {
     </button>
   );
 }
+
