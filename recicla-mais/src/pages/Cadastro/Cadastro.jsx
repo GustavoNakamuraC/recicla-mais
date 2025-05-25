@@ -23,7 +23,7 @@ export default function Cadastro() {
 
   const onSubmit = async (data) => {
     await cadastrar(data);  
-    navigate('/');
+    navigate('/login');
     console.log(data);
     
   };

@@ -20,8 +20,10 @@ export default function Login() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await logar({email, senha});
-    navigate('/');
+    const usuario = await logar({email, senha});
+    console.log('Usuario logado: ', usuario);
+    localStorage.setItem('usuario', usuario);
+    navigate('/home');
     console.log("Tentando login com:", data);
   };
 

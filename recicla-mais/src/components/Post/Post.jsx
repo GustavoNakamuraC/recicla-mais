@@ -10,6 +10,7 @@ export default function Post({
   curtidas,
   comentarios,
   atualizarPosts,
+  onComentarioClick
 }) {
   async function curtir(id) {
     await curtirPublicacao(id);

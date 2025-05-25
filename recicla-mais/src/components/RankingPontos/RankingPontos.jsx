@@ -4,7 +4,7 @@ export default function RankingPontos({ usuario, ranking }) {
   const rankingOrdenado = [...ranking].sort((a, b) => b.pontos - a.pontos);
 
   const posicaoUsuario = rankingOrdenado.findIndex(
-    (user) => user.nome === usuario.nome
+    (user) => user.id === usuario.id
   ) + 1;
 
   return (
