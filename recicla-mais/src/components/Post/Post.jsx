@@ -1,7 +1,13 @@
 import './Post.css';
 import { FaThumbsUp, FaComment } from 'react-icons/fa';
+import curtirPublicacao from './Post.service'
 
-export default function Post({ nome, pontos, texto, curtidas, comentarios }) {
+export default function Post({ id, nome, pontos, texto, curtidas, comentarios, atualizarPosts }) {
+  async function curtir(id) {
+    await curtirPublicacao(id);
+    atualizarPosts();   
+  }
+
   return (
     <div className="post-wrapper">
       <div className="post-container">
@@ -10,7 +16,7 @@ export default function Post({ nome, pontos, texto, curtidas, comentarios }) {
         </div>
         <p className="post-texto">{texto}</p>
         <div className="post-acoes">
-          <button className="post-btn">
+          <button className="post-btn" onClick={() => curtir(id)}>
             <FaThumbsUp className="post-icon" />
             Gostei ({curtidas})
           </button>
