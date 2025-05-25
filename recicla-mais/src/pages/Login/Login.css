@@ -1,0 +1,41 @@
+.tela-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c8cad6;
+}
+
+.container-login {
+  background-color: #0d1553;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo-login {
+  width: 80px;
+  margin: 0 auto 10px auto;
+}
+
+.titulo-login {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.plus-login {
+  color: white;
+}
+
+.subtitulo-login {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 25px;
+}
