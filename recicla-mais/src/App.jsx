@@ -1,4 +1,4 @@
-import Cadastro from './pages/Login/Login';
+import Cadastro from './pages/Home/Home';
 import './App.css'
 
 

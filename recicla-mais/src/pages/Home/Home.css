@@ -1,0 +1,8 @@
+.Home-Page {
+  background-color: #C9CBDC;
+  min-height: 100vh;
+}
+
+.Home-Page > * + * {
+  margin-top: 1rem;
+}
