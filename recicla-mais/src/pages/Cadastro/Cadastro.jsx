@@ -1,3 +1,4 @@
+
 import './Cadastro.css';
 import Input from '../../components/Input/Input';
 import Botao from '../../components/Botao/Botao';
@@ -15,7 +16,7 @@ export default function Cadastro(){
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -23,13 +24,13 @@ export default function Cadastro(){
     console.log(data);
   };
 
-
-
   return (
     <div className="tela">
       <div className="container">
         <img src={Logo} alt="Logo Recicla+" className="logo" />
-        <h1 className="titulo">Recicla<span className="plus">+</span></h1>
+        <h1 className="titulo">
+          Recicla<span className="plus">+</span>
+        </h1>
         <p className="subtitulo">Cadastre-se</p>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <Input
@@ -48,8 +49,8 @@ export default function Cadastro(){
               required: 'E-mail é obrigatório',
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'E-mail inválido'
-              }
+                message: "E-mail inválido",
+              },
             })}
           />
           <Input
@@ -61,8 +62,8 @@ export default function Cadastro(){
               required: 'Senha é obrigatória',
               minLength: {
                 value: 6,
-                message: 'A senha deve ter pelo menos 6 caracteres'
-              }
+                message: "A senha deve ter pelo menos 6 caracteres",
+              },
             })}
           />
           <Botao texto="Cadastrar" />
