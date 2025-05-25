@@ -3,8 +3,15 @@ import Input from '../../components/Input/Input';
 import Botao from '../../components/Botao/Botao';
 import { useForm } from 'react-hook-form';
 import Logo from '../../assets/Logo.png';
+import cadastrar from './CadastroService'
+import { useState } from 'react';
 
-const Cadastro = () => {
+export default function Cadastro(){
+  
+  const [nome, setNome] = useState();
+  const [email, setEmail] = useState();
+  const [senha, setSenha] = useState();
+
   const {
     register,
     handleSubmit,
@@ -12,10 +19,11 @@ const Cadastro = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    cadastrar(data);
     console.log(data);
   };
 
-  
+
 
   return (
     <div className="tela">
@@ -28,12 +36,14 @@ const Cadastro = () => {
             label="Nome"
             type="text"
             error={errors.nome?.message}
+            value={nome}
             {...register('nome', { required: 'Nome é obrigatório' })}
           />
           <Input
             label="Email"
             type="email"
             error={errors.email?.message}
+            value={email}
             {...register('email', {
               required: 'E-mail é obrigatório',
               pattern: {
@@ -46,6 +56,7 @@ const Cadastro = () => {
             label="Senha"
             type="password"
             error={errors.senha?.message}
+            value={senha}
             {...register('senha', {
               required: 'Senha é obrigatória',
               minLength: {
@@ -60,5 +71,3 @@ const Cadastro = () => {
     </div>
   );
 };
-
-export default Cadastro;

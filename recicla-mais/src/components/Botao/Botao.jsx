@@ -1,11 +1,6 @@
 import './Botao.css';
 
-interface BotaoProps {
-  texto: string;
-  onClick?: () => void;
-}
-
-const Botao = ({ texto, onClick }: BotaoProps) => (
+const Botao = ({ texto, onClick }) => (
   <button className="botao" type="submit" onClick={onClick}>
     {texto}
   </button>

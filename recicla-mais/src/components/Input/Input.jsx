@@ -1,12 +1,6 @@
 import './Input.css';
-import { forwardRef } from 'react';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  error?: string;
-}
-
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input = (
   ({ label, error, ...props }, ref) => {
     return (
       <div className="input-group">
